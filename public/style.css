@@ -67,7 +67,7 @@ a.link:hover {
 	text-decoration: overline;
 }
 
-#articles {
+#articles, #savedArticles {
 	background-color: #B2484C;
 	color: #fff;
 	margin-bottom: 30px;

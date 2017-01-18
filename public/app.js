@@ -9,13 +9,19 @@ $("#scrape").on("click", function() {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append("<div class='newArticle'><p data-id='" + data[i]._id + "'><h3><a class='link' target='_blank' href='" + data[i].link + "'>" + data[i].title + "</a></h3><button type='button' id='" + data[i]._id + "' class='btn btn-default'>Add to Favorites</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type='button' id='favorite' class='btn btn-default'>Add Note</button></p></div>");
+    // $("#articles").append("<div class='newArticle'><p data-id='" + data[i]._id + "'><h3><a class='link' target='_blank' href='" + data[i].link + "'>" + data[i].title + "</a></h3><button type='button' id='" + data[i]._id + "' class='btn btn-default'>Add to Favorites</button></p></div>");
+    $("#articles").append("<div class='newArticle'><p data-id='" + data[i]._id + "'><h3><a class='link' target='_blank' href='" + data[i].link + "'>" + data[i].title + "</a></h3><button type='button' id='favorite' data-id='" + data[i]._id + "' class='btn btn-default'>Add to Favorites</button></p></div>");
   }
   });  
 });
 
+// push saved articles to favorites page on button click
+$("#articles").on("click", "#addNote", function() {
+  console.log("clicked");
+});
+
 // Whenever someone clicks a p tag
-$(document).on("click", "p", function() {
+$("thing").on("click", function() {
   // Empty the notes from the note section
   $("#notes").empty();
   // Save the id from the p tag
